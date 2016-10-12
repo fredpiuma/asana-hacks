@@ -15,12 +15,14 @@
 		/* remove signature on asana reply */
 		var $from = document.querySelectorAll('h3.iw span.gD');
 		if($from.length > 0) {
-			$from = $from[0].getAttribute('email');
-			if( /reply-.+@asana.com/.test($from) ) {
-				var $dots = document.querySelectorAll('.aH1');
-				if( $dots.length > 0 ) {
-					$dots[0].parentNode.click();
-					document.getElementsByClassName('editable')[0].innerHTML = '';
+			if( /reply-.+@asana.com/.test( $from[0].getAttribute('email') ) ) {
+				if( !$from[0].getAttribute('removed') ) {
+					$from[0].setAttribute('removed', true);
+					var $dots = document.querySelectorAll('.aH1');
+					if( $dots.length > 0 ) {
+						$dots[0].parentNode.click();
+						document.getElementsByClassName('editable')[0].innerHTML = '';
+					}
 				}
 			}
 		}
