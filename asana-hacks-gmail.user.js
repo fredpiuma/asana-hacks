@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Asana Haks for Gmail
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.2
 // @description  
 // @author       You
 // @match        https://mail.google.com/mail/u/*
@@ -16,13 +16,11 @@
 		var $from = document.querySelectorAll('h3.iw span.gD');
 		if($from.length > 0) {
 			if( /reply-.+@asana.com/.test( $from[0].getAttribute('email') ) ) {
-				if( !$from[0].getAttribute('removed') ) {
+				var $dots = document.querySelectorAll('.aH1');
+				if( $dots.length > 0 && !$from[0].getAttribute('removed') ) {
 					$from[0].setAttribute('removed', true);
-					var $dots = document.querySelectorAll('.aH1');
-					if( $dots.length > 0 ) {
-						$dots[0].parentNode.click();
-						document.getElementsByClassName('editable')[0].innerHTML = '';
-					}
+					$dots[0].parentNode.click();
+					document.getElementsByClassName('editable')[0].innerHTML = '';
 				}
 			}
 		}
