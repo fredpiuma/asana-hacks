@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Asana Haks for Gmail
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  
 // @author       You
-// @match        https://mail.google.com/mail/u/*
+// @match        https://mail.google.com/mail/*
 // @grant        none
 // ==/UserScript==
 
