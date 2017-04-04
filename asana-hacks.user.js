@@ -23,7 +23,7 @@
 	 */
 	if( config.aways_show_remove_buttom ) {
 		var style = document.createElement('style');
-		style.innerHTML = '.small-feed-story-group .feed-story .delete {visibility: visible;}';
+		style.innerHTML = '.small-feed-story-group .feed-story .delete, .FeedMiniStory-deleteButton {visibility: visible;}';
 		document.body.appendChild(style);
 	}
 
@@ -33,7 +33,7 @@
 		 * This option make a cleanup on history of changes every 500ms
 		 */
 		if( config.auto_clean_tasks ) {
-			var deletes = document.getElementsByClassName('delete click-target');
+			var deletes = document.querySelectorAll('.delete.click-target, .FeedMiniStory-deleteButton');
 			if(deletes.length > 0) deletes[0].click();
 		}
 
