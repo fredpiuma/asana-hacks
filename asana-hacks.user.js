@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Asana hacks
 // @namespace    https://github.com/fredpiuma/asana-hacks
-// @version      1.0
+// @version      2.0
 // @description  Asana hacks user script.
 // @author       Frederico de Castro - http://www.fredericodecastro.com.br
 // @match        https://app.asana.com/*
