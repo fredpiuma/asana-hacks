@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Asana hacks
 // @namespace    https://github.com/fredpiuma/asana-hacks
-// @version      2.0
+// @version      2.1
 // @description  Asana hacks user script.
 // @author       Frederico de Castro - http://www.fredericodecastro.com.br
 // @match        https://app.asana.com/*
@@ -45,10 +45,10 @@
 			var datas = document.getElementsByClassName('grid_due_date');
 			for(var i = 0; i < datas.length; i++) {
 				if( !/[0-9]{2}\/[0-9]{2}/.test( datas[i].innerHTML ) ) {
-					if( /([0-9]{1,2}) ([a-zA-Z]{3})/.test( datas[i].innerHTML ) ) {
-						var date = /([0-9]{1,2}) ([a-zA-Z]{3})/.exec(datas[i].innerHTML);
+					if( /([a-zA-Z]{3}) ([0-9]{1,2})/.test( datas[i].innerHTML ) ) {
+						var date = /([a-zA-Z]{3}) ([0-9]{1,2})/.exec(datas[i].innerHTML);
 						var month = { Jan : '01', Feb : '02', Mar : '03', Apr : '04', May : '05', Jun : '06', Jul : '07', Aug : '08', Sep : '09', Oct : '10', Nov : '11', Dec : '12' };
-						datas[i].innerHTML = (date[1].length==1 ? '0' : '') + date[1] + "/" + month[date[2]];
+						datas[i].innerHTML = (date[2].length==1 ? '0' : '') + date[2] + "/" + month[date[1]];
 					} else {
 						var date = new Date();
 						var addDays = 0;
